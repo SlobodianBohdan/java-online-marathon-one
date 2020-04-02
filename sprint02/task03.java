@@ -6,7 +6,9 @@ class Solution {
 
         if (dividend < 0){
             dividend *= -1;
-        }else if (divisor < 0){
+        }
+
+        if (divisor < 0){
             divisor *= -1;
         }
 
