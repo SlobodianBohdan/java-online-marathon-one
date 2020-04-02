@@ -1,11 +1,3 @@
-public class Main {
-    public static void main(String[] args) {
-      
-          System.out.println(Solution.divide(10,3));
-          System.out.println(Solution.divide(7,-3));
-
-    }
-}
 
 class Solution {
     static int divide(int dividend, int divisor) {
