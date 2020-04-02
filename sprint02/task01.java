@@ -1,8 +1,4 @@
-public class Main {
-    public static void main(String[] args) {
-        System.out.println(Solution.isPalindrome(121));
-    }
-}
+//Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
 
 class Solution {
     public static boolean isPalindrome(int x) {
