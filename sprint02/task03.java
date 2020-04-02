@@ -4,8 +4,11 @@ class Solution {
         int sign = ((dividend < 0) ^
                 (divisor < 0)) ? -1 : 1;
 
-        dividend = Math.abs(dividend);
-        divisor = Math.abs(divisor);
+        if (dividend < 0){
+            dividend *= -1;
+        }else if (divisor < 0){
+            divisor *= -1;
+        }
 
         int quotient = 0;
 
