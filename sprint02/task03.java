@@ -5,10 +5,10 @@ class Solution {
         int quotient = 0;
 
         if (dividend < 0) {
-            dividend *= -1;
+            dividend = -dividend;
         }
         if (divisor < 0) {
-            divisor *= -1;
+            divisor = -divisor;
         }
         
         while (dividend >= divisor) {
