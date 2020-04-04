@@ -1,27 +1,30 @@
 
 class Solution {
     static int divide(int dividend, int divisor) {
+        if (dividend == Integer.MIN_VALUE && divisor == 1){
+            return Integer.MIN_VALUE;}
+        else if (dividend== Integer.MIN_VALUE && divisor == -1) {
+            return Integer.MAX_VALUE;
+        }
         int sign = ((dividend < 0) ^ (divisor < 0)) ? -1 : 1;
-        int quotient = 0;
+        long quotient = 0;
+        long dividend2 = dividend;
+        long divisor2 = divisor;
 
-        if (dividend < 0) {
-            dividend = -dividend;
+        if (dividend2 < 0) {
+            dividend2 = -dividend2;
         }
-        if (divisor < 0) {
-            divisor = -divisor;
+        if (divisor2 < 0) {
+            divisor2 = -divisor2;
         }
-        
-        while (dividend >= divisor) {
-            dividend -= divisor;
+
+        while (dividend2 >= divisor2) {
+            dividend2 -= divisor2;
             ++quotient;
         }
 
-        int result = sign * quotient;
-        int remainder = result % 10;
-        if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && remainder > 7))
-            return Integer.MAX_VALUE;
-        if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && remainder < -8))
-            return Integer.MIN_VALUE;
-        return result;
+        long result = sign * quotient;
+
+        return (int) result;
     }
 }
