@@ -1,10 +1,9 @@
-class MyUtils {
+import java.util.Arrays;
+import java.util.Comparator;
+public class MyUtils {
     // Code
-
-    public static void arrSort(int[][] arr) {
-        // Code
+    public int[][] arrSort(int[][] arr) {
         Arrays.sort(arr, (int1, int2) -> {
-
             if (int1.length == 1) {
                 int value = int1[0];
                 int1 = new int[2];
@@ -29,6 +28,6 @@ class MyUtils {
             } else
                 return 1;
         });
-
+        return arr;
     }
 }
