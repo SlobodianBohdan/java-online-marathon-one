@@ -1,28 +1,21 @@
-// Please, implement a static method findMaxByCondition of MyUtils class that takes List of integers as a first parameter and predicate as a second and returns the max value from the list that satisfies the condition of the predicate. 
-// Also, implement getFilterdValue method of User class. getFilteredValue should be able to take MyUtils::findMaxByCondition as a first parameter and Predicate as a second. This method should return an integer value, evaluated from User's field values using the first and second parameters of getFilterdValue.
-// One more method that needs to be implemented in User class - getMaxValueByCondition. This method has one parameter - Predicate. The implementation should call getFilterdValue method with MyUtils.findMaxByCondition as a first parameter and passed along Predicate as a second.
+// Please, implement a static method getPredicateFromSet in MyUtils class.
+// getPredicateFromSet should take a Set of predicates working with integers as a parameter and return a predicate with the functionality of all predicates in the set invoked and connected by logical AND.
 
 
 import java.util.function.Predicate;
-import java.util.function.BiFunction;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 class MyUtils{
-    public static int findMaxByCondition(List<Integer> numbers, Predicate<Integer> pr) {
-	    //you implementation
-    }
-}
-
-class User{
-
-    public final List<Integer> values = new ArrayList<Integer>();   
-
-    int getFilterdValue(/*arguments*/){
-        //implementation
-    }
-
-    int getMaxValueByCondition(Predicate<Integer> pr) {
-        //your implementation
+    public static Predicate<Integer> getPredicateFromSet(Set<Predicate<Integer>> predicateSet) {
+        return new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer integer) {
+                boolean result = false;
+                for (Predicate<Integer> predicate : predicateSet) {
+                    result = result ^ predicate.test(integer);
+                }
+                return result;
+            }
+        };
     }
 }
