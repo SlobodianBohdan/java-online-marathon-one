@@ -1,4 +1,5 @@
-// Create a class Plant, which includes private fields String name, Color color and Type type, and constructor with three String parameters where these fields are initialized. Color and Type are Enum. 
+// Create a class Plant, which includes private fields String name, Color color and Type type, and constructor with three String parameters where these fields are initialized. 
+// Color and Type are Enum. 
 // Color contains White, Red, Blue entries.
 // Type contains Rare and Ordinary entries.
 // Override the method toString( ) for Plant class which returns result formatted like following: {type: Rare, color: Red, name: MyPlant}
